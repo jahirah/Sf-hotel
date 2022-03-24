@@ -1,0 +1,114 @@
+<form action="" method="post" role="form" class="php-email-form">
+    <div class="row">
+        <div class="col-lg-8">
+            <div class="row">
+                <div class="col-lg-4 col-md-6 form-group">
+                    <label for="">Nom et prénom</label>
+                    <input type="text" class="form-control" name="" id="">
+                    <div class="validate"></div>
+                </div>
+                <div class="col-lg-4 col-md-6 form-group mt-3 mt-md-0">
+                    <label for="">Email</label>
+                    <input type="email" class="form-control" name="" id="" >
+                    <div class="validate"></div>
+                </div>
+                <div class="col-lg-4 col-md-6 form-group mt-3 mt-md-0">
+                    <label for="">Téléphone</label>
+                    <input type="text" class="form-control" name="" id="">
+                    <div class="validate"></div>
+                </div>
+                <div class="col-lg-4 col-md-6 form-group mt-3">
+                    <label for="">Date de reservation</label>
+                    <input type="date" class="form-control" name="" id="">
+                    <div class="validate"></div>
+                </div>
+                <div class="col-lg-4 col-md-6 form-group mt-3">
+                    <label for="">Date d'arrivée</label>
+                    <input type="date" class="form-control" name="" id="">
+                    <div class="validate"></div>
+                </div>
+                <div class="col-lg-4 col-md-6 form-group mt-3">
+                    <label for="">Date de départ</label>
+                    <input type="date" class="form-control" name="" id="">
+                    <div class="validate"></div>
+                </div>
+                <div class="col-lg-4 col-md-6 form-group mt-3">
+                    <label for="">Motif</label>
+                    <input type="text" class="form-control" name="" id="">
+                    <div class="validate"></div>
+                </div>
+                <div class="col-lg-4 col-md-6 form-group mt-3">
+                    <label for="">Localité</label>
+                    <select class="form-control" name="salle" id="salle">
+                        <option value=""></option>
+                        <option value="Auditorium">Auditorium</option>
+                        <option value="Pièce conférence">Pièce conférence</option>
+                        <option value="Visio-conférence">Visio-conférence</option>
+                    </select>
+                    <div class="validate"></div>
+                </div>
+                <div class="text-center pt-4"><button type="submit">Réserver</button></div>
+            </div>
+        </div>
+        <div class="col-lg-4" id="audi">
+            <p class="text-center">Détail : </p>   
+            <p><i class="bi bi-check-circle"></i> Nombre de personne max = 100</p>
+            <p><i class="bi bi-check-circle"></i> Matériel et Sono = Offert </p> 
+            <p><i class="bi bi-check-circle"></i> Prix =Ar 300.000 </p>          
+            <div class="gallery-item pt-2">
+                <img src="assets/img/conference/auditorium.jpg" alt="" class="img-fluid">
+            </div>
+        </div>
+        <div class="col-lg-4" id="piece">
+            <p class="text-center">Détail : </p>   
+            <p><i class="bi bi-check-circle"></i> Nombre de personne max = 70</p>
+            <p><i class="bi bi-check-circle"></i> Matériel et Sono = Offert </p>
+            <p><i class="bi bi-check-circle"></i> Prix =Ar 200.000 </p>        
+            <div class="gallery-item pt-2">
+                <img src="assets/img/conference/piece-conference.jpg" alt="" class="img-fluid">
+            </div>
+        </div>
+        <div class="col-lg-4" id="visio">
+            <p class="text-center">Détail : </p>   
+            <p><i class="bi bi-check-circle"></i> Nombre de personne max = 15</p>
+            <p><i class="bi bi-check-circle"></i> Matériel et équipement = Offert </p>
+            <p><i class="bi bi-check-circle"></i> Prix =Ar 100.000 </p>        
+            <div class="gallery-item pt-2">
+                <img src="assets/img/conference/visio.jpg" alt="" class="img-fluid">
+            </div>
+        </div>
+        
+    </div>    
+</form>
+
+<script src="assets/js/jquery.min.js"></script>
+<script>
+    $(function(){
+
+        $('#audi').hide();
+        $('#piece').hide();
+        $('#visio').hide();
+
+        $('#salle').change(function(){
+            if($('#salle').val()=='Auditorium')
+            {
+                $('#audi').show();
+                $('#piece').hide();
+                $('#visio').hide();
+            }
+            else if($('#salle').val()=='Pièce conférence')
+            {
+                $('#audi').hide();
+                $('#piece').show();
+                $('#visio').hide();
+            }
+            else if($('#salle').val()=='Visio-conférence')
+            {
+                $('#audi').hide();
+                $('#piece').hide();
+                $('#visio').show();
+            }
+        })
+
+    });
+</script>

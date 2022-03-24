@@ -1,0 +1,122 @@
+<form action="" method="post" role="form" class="php-email-form">
+    <div class="row">
+        <div class="col-lg-8">
+            <div class="row">
+                <div class="col-lg-4 col-md-6 form-group">
+                    <label for="">Nom et prénom</label>
+                    <input type="text" class="form-control" name="" id="">
+                    <div class="validate"></div>
+                </div>
+                <div class="col-lg-4 col-md-6 form-group mt-3 mt-md-0">
+                    <label for="">Email</label>
+                    <input type="email" class="form-control" name="" id="">
+                    <div class="validate"></div>
+                </div>
+                <div class="col-lg-4 col-md-6 form-group mt-3 mt-md-0">
+                    <label for="">Téléphone</label>
+                    <input type="text" class="form-control" name="" id="">
+                    <div class="validate"></div>
+                </div>
+                <div class="col-lg-4 col-md-6 form-group mt-3">
+                    <label for="">Date de reservation</label>
+                    <input type="date" class="form-control" name="" id="">
+                    <div class="validate"></div>
+                </div>
+                <div class="col-lg-4 col-md-6 form-group mt-3">
+                    <label for="">Date d'entrée</label>
+                    <input type="date" class="form-control" name="" id="">
+                    <div class="validate"></div>
+                </div>
+                <div class="col-lg-4 col-md-6 form-group mt-3">
+                    <label for="">Date de départ</label>
+                    <input type="date" class="form-control" name="" id="">
+                    <div class="validate"></div>
+                </div>
+                <div class="col-lg-4 col-md-6 form-group mt-3">
+                    <label for="">Type de chambre</label>
+                    <select class="form-control" name="" id="chambre">
+                        <option value=""></option>
+                        <option value="Suite royale">Suite royale</option>
+                        <option value="Chambre de luxe">Chambre de luxe</option>
+                        <option value="Chambre classique">Chambre classique</option>
+                    </select>
+                    <div class="validate"></div>
+                </div>        
+                <div class="col-lg-4 col-md-6 form-group mt-3">
+                    <label for="">Nbr adulte</label>
+                    <input type="number" class="form-control" name="" id="">
+                    <div class="validate"></div>
+                </div>                
+                <div class="col-lg-4 col-md-6 form-group mt-3">
+                    <label for="">Nbr Enfant</label>
+                    <input type="number" class="form-control" name="" id="">
+                    <div class="validate"></div>
+                </div>
+            </div>
+            <div class="text-center"><button type="submit">Réserver</button></div>
+        </div>
+        <div class="col-lg-4" id="suite">
+            <p class="text-center">Détail : </p>   
+            <p><i class="bi bi-check-circle"></i> Nombre de chambre = 5</p>
+            <p><i class="bi bi-check-circle"></i> Adulte = 4 </p>
+            <p><i class="bi bi-check-circle"></i> Enfant = 3 </p> 
+            <p><i class="bi bi-check-circle"></i> Prix =Ar 300.000 </p>          
+            <div class="gallery-item pt-2">
+                <img src="assets/img/chambre/suite.jpg" alt="" class="img-fluid">
+            </div>
+        </div>
+        <div class="col-lg-4" id="luxe">
+            <p class="text-center">Détail : </p>   
+            <p><i class="bi bi-check-circle"></i> Nombre de chambre = 2</p>
+            <p><i class="bi bi-check-circle"></i> Adulte = 2 </p>
+            <p><i class="bi bi-check-circle"></i> Enfant = 3 </p>
+            <p><i class="bi bi-check-circle"></i> Prix =Ar 200.000 </p>        
+            <div class="gallery-item pt-2">
+                <img src="assets/img/chambre/luxe.jpg" alt="" class="img-fluid">
+            </div>
+        </div>
+        <div class="col-lg-4" id="classique">
+            <p class="text-center">Détail : </p>   
+            <p><i class="bi bi-check-circle"></i> Nombre de chambre = 1</p>
+            <p><i class="bi bi-check-circle"></i> Adulte = 2 </p>
+            <p><i class="bi bi-check-circle"></i> Enfant = 3 </p>
+            <p><i class="bi bi-check-circle"></i> Prix =Ar 100.000 </p>       
+            <div class="gallery-item pt-2">
+                <img src="assets/img/chambre/classic.jpg" alt="" class="img-fluid">
+            </div>
+        </div>
+    </div>
+
+</form>
+
+<script src="assets/js/jquery.min.js"></script>
+<script>
+    $(function(){
+
+        $('#suite').hide();
+        $('#luxe').hide();
+        $('#classique').hide();
+
+        $('#chambre').change(function(){
+            if($('#chambre').val()=='Suite royale')
+            {
+                $('#suite').show();
+                $('#luxe').hide();
+                $('#classique').hide();
+            }
+            else if($('#chambre').val()=='Chambre de luxe')
+            {
+                $('#suite').hide();
+                $('#luxe').show();
+                $('#classique').hide();
+            }
+            else if($('#chambre').val()=='Chambre classique')
+            {
+                $('#suite').hide();
+                $('#luxe').hide();
+                $('#classique').show();
+            }
+        })
+
+    });
+</script>

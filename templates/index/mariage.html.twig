@@ -1,0 +1,83 @@
+<form action="" method="post" role="form" class="php-email-form">
+    <div class="row">
+        <div class="col-lg-8">
+            <div class="row">
+                <div class="col-lg-4 col-md-6 form-group">
+                    <label for="">Nom et prénom</label>
+                    <input type="text" class="form-control" name="" id="">
+                    <div class="validate"></div>
+                </div>
+                <div class="col-lg-4 col-md-6 form-group mt-3 mt-md-0">
+                    <label for="">Email</label>
+                    <input type="email" class="form-control" name="" id="" >
+                    <div class="validate"></div>
+                </div>
+                <div class="col-lg-4 col-md-6 form-group mt-3 mt-md-0">
+                    <label for="">Téléphone</label>
+                    <input type="text" class="form-control" name="" id="">
+                    <div class="validate"></div>
+                </div>
+                <div class="col-lg-4 col-md-6 form-group mt-3">
+                    <label for="">Date de reservation</label>
+                    <input type="date" class="form-control" name="" id="">
+                    <div class="validate"></div>
+                </div>
+                <div class="col-lg-4 col-md-6 form-group mt-3">
+                    <label for="">Date du mariage</label>
+                    <input type="date" class="form-control" name="" id="">
+                    <div class="validate"></div>
+                </div>
+                <div class="col-lg-4 col-md-6 form-group mt-3">
+                    <label for="">A propos du salle</label>
+                    <select class="form-control" name="salle" id="salle">
+                        <option value=""></option>
+                        <option value="Grande Salle">Grande Salle</option>
+                        <option value="En chapiteau">En chapiteau</option>
+                    </select>
+                    <div class="validate"></div>
+                </div>
+                <div class="text-center pt-4"><button type="submit">Réserver</button></div>
+            </div>
+        </div>
+        <div class="col-lg-4" id="interieur">
+            <p class="text-center">Détail : </p>   
+            <p><i class="bi bi-check-circle"></i> Nombre de personne max = 300</p>
+            <p><i class="bi bi-check-circle"></i> Prix =Ar 400.000 </p>          
+            <div class="gallery-item pt-2">
+                <img src="assets/img/mariage/interieur.jpg" alt="" class="img-fluid">
+            </div>
+        </div>
+        <div class="col-lg-4" id="exterieur">
+            <p class="text-center">Détail : </p>   
+            <p><i class="bi bi-check-circle"></i> Nombre de personne max = 600</p>
+            <p><i class="bi bi-check-circle"></i> Prix =Ar 300.000 </p>        
+            <div class="gallery-item pt-2">
+                <img src="assets/img/mariage/exterieur.jpg" alt="" class="img-fluid">
+            </div>
+        </div>
+        
+    </div>    
+</form>
+
+<script src="assets/js/jquery.min.js"></script>
+<script>
+    $(function(){
+
+        $('#interieur').hide();
+        $('#exterieur').hide();
+
+        $('#salle').change(function(){
+            if($('#salle').val()=='Grande Salle')
+            {
+                $('#exterieur').hide();
+                $('#interieur').show();
+            }
+            else if($('#salle').val()=='En chapiteau')
+            {
+                $('#exterieur').show();
+                $('#interieur').hide();
+            }
+        })
+
+    });
+</script>

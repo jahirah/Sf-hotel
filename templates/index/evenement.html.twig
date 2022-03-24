@@ -1,0 +1,121 @@
+<form action="" method="post" role="form" class="php-email-form">
+    <div class="row">
+        <div class="col-lg-8">
+            <div class="row">
+                <div class="col-lg-4 col-md-6 form-group">
+                    <label for="">Nom et prénom</label>
+                    <input type="text" class="form-control" name="" id="">
+                    <div class="validate"></div>
+                </div>
+                <div class="col-lg-4 col-md-6 form-group mt-3 mt-md-0">
+                    <label for="">Email</label>
+                    <input type="email" class="form-control" name="" id="" >
+                    <div class="validate"></div>
+                </div>
+                <div class="col-lg-4 col-md-6 form-group mt-3 mt-md-0">
+                    <label for="">Téléphone</label>
+                    <input type="text" class="form-control" name="" id="">
+                    <div class="validate"></div>
+                </div>
+                <div class="col-lg-4 col-md-6 form-group mt-3">
+                    <label for="">Date de reservation</label>
+                    <input type="date" class="form-control" name="" id="">
+                    <div class="validate"></div>
+                </div>
+                <div class="col-lg-4 col-md-6 form-group mt-3">
+                    <label for="">Date d'arrivée</label>
+                    <input type="date" class="form-control" name="" id="">
+                    <div class="validate"></div>
+                </div>
+                <div class="col-lg-4 col-md-6 form-group mt-3">
+                    <label for="">Date de départ</label>
+                    <input type="date" class="form-control" name="" id="">
+                    <div class="validate"></div>
+                </div>
+                <div class="col-lg-4 col-md-6 form-group mt-3">
+                    <label for="">Evenement</label>
+                    <select class="form-control" name="salle" id="salle">
+                        <option value=""></option>
+                        <option value="Anniversaire">Anniversaire</option>
+                        <option value="Baptème">Baptème</option>
+                        <option value="Réunion-familliale">Réunion-familliale</option>
+                    </select>
+                    <div class="validate"></div>
+                </div>
+                <div class="col-lg-4 col-md-6 form-group mt-3">
+                    <label for="">Service</label>
+                    <select class="form-control" name="service" id="service">
+                        <option value=""></option>
+                        <option value="Avec traiteur">Avec traiteur</option>
+                        <option value="Sans traiteur">Sans traiteur</option>
+                    </select>
+                    <div class="validate"></div>
+                </div>
+                <div class="text-center pt-4"><button type="submit">Réserver</button></div>
+            </div>
+        </div>
+        <div class="col-lg-4" id="anniversaire">
+            <p class="text-center">Détail : </p>   
+            <p><i class="bi bi-check-circle"></i> Nombre de personne max = 50</p>
+            <p><i class="bi bi-check-circle"></i> Matériel et Sono = Offert </p> 
+            <p><i class="bi bi-check-circle"></i> Avec traiteur = Ar 300.000 </p> 
+            <p><i class="bi bi-check-circle"></i> Sans traiteur =Ar 100.000 </p>          
+            <div class="gallery-item pt-2">
+                <img src="assets/img/evenement/anniversaire.jpg" alt="" class="img-fluid">
+            </div>
+        </div>
+        <div class="col-lg-4" id="bapteme">
+            <p class="text-center">Détail : </p>   
+            <p><i class="bi bi-check-circle"></i> Nombre de personne max = 100</p>
+            <p><i class="bi bi-check-circle"></i> Matériel et Sono = Offert </p>
+            <p><i class="bi bi-check-circle"></i> Avec traiteur = Ar 500.000 </p> 
+            <p><i class="bi bi-check-circle"></i> Sans traiteur =Ar 200.000 </p>       
+            <div class="gallery-item pt-2">
+                <img src="assets/img/evenement/bapteme.jpg" alt="" class="img-fluid">
+            </div>
+        </div>
+        <div class="col-lg-4" id="rencontre">
+            <p class="text-center">Détail : </p>   
+            <p><i class="bi bi-check-circle"></i> Nombre de personne max = 150</p>
+            <p><i class="bi bi-check-circle"></i> Matériel et équipement = Offert </p>
+            <p><i class="bi bi-check-circle"></i> Avec traiteur = Ar 600.000 </p> 
+            <p><i class="bi bi-check-circle"></i> Sans traiteur =Ar 300.000 </p>        
+            <div class="gallery-item pt-2">
+                <img src="assets/img/evenement/rencontre.jpg" alt="" class="img-fluid">
+            </div>
+        </div>
+        
+    </div>    
+</form>
+
+<script src="assets/js/jquery.min.js"></script>
+<script>
+    $(function(){
+
+        $('#anniversaire').hide();
+        $('#bapteme').hide();
+        $('#rencontre').hide();
+
+        $('#salle').change(function(){
+            if($('#salle').val()=='Anniversaire')
+            {
+                $('#anniversaire').show();
+                $('#bapteme').hide();
+                $('#rencontre').hide();
+            }
+            else if($('#salle').val()=='Baptème')
+            {
+                $('#anniversaire').hide();
+                $('#bapteme').show();
+                $('#rencontre').hide();
+            }
+            else if($('#salle').val()=='Réunion-familliale')
+            {
+                $('#anniversaire').hide();
+                $('#bapteme').hide();
+                $('#rencontre').show();
+            }
+        })
+
+    });
+</script>
